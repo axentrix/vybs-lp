@@ -3,6 +3,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --counter-bg: rgba(94, 105, 255, 1);
+  --white: #fff;
+  --dollar-border: rgba(0, 0, 0, 1);
+  --linear: #ffa743;
+  --border-green: rgba(60, 217, 138, 1);
+  --highlight-yellowgreen: rgba(215, 253, 97, 1);
 }
 
 @theme inline {
@@ -10,6 +16,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-kanit: var(--font-kanit);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +30,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Scroll containers - JavaScript handles animation */
+.scroll-content {
+  will-change: transform;
 }
