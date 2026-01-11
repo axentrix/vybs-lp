@@ -7,6 +7,8 @@ import GiftCardsSection from "./components/GiftCardsSection";
 import HowItWorksSection from "./components/HowItWorksSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import FooterSection from "./components/FooterSection";
+import HeroImages from "./components/HeroImages";
+import HeroRightImage from "./components/HeroRightImage";
 
 export default function Home() {
   return (
@@ -17,20 +19,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-radial from-[#B3B9FF] via-[#6B75FF] to-[#4A55ED]"
              style={{ background: 'radial-gradient(30.77% 49.76% at 73.21% 46.65%, #B3B9FF 0%, #4A55ED 100%)' }} />
 
-        {/* Decorative Wave SVG */}
-        <img
-          src="/images/path.svg"
-          alt=""
-          className="absolute inset-x-0 bottom-0 w-screen"
-          style={{ height: '546px', objectFit: 'cover' }}
-        />
-
-        {/* Decorative Glow - Hidden on mobile */}
-        <img
-          src="/images/heroglow.png"
-          alt=""
-          className="absolute right-0 top-0 hidden h-[668px] opacity-70 lg:block"
-        />
+        {/* Hero Background Images */}
+        <HeroImages />
 
         {/* Main Content Wrapper - Vertically centered with max-width */}
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-center px-6 py-0 md:px-11 h-auto lg:h-[668px] w-full">
@@ -104,26 +94,7 @@ export default function Home() {
           </div>
 
           {/* Right Image - 100% height */}
-          <div className="relative h-auto w-full lg:h-[668px] lg:w-auto flex-shrink-0">
-            <img
-              src="/images/rightimage.png"
-              alt="Hero image"
-              className="h-full w-full object-cover"
-            />
-
-            {/* Progress Bar - Positioned under middle of image vertically */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 translate-y-8">
-              <div className="relative">
-                <img
-                  src="/images/progressbar.svg"
-                  alt="Progress bar"
-                  className="w-auto"
-                />
-                {/* Bright white shadow beneath progress bar */}
-                <div className="absolute left-0 right-0 top-full mt-2 h-12 w-full bg-gradient-to-b from-white/60 to-transparent blur-lg" />
-              </div>
-            </div>
-          </div>
+          <HeroRightImage />
         </div>
       </section>
 

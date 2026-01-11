@@ -134,7 +134,7 @@ export default function GamesSection() {
 
         {/* First Row - Left aligned, Scroll Right */}
         <div className="scroll-row-left w-full overflow-hidden">
-          <div ref={scrollRowLeftRef} className="scroll-content flex gap-3">
+          <div ref={scrollRowLeftRef} className="scroll-content flex w-max gap-3">
             {[...gameIcons, ...gameIcons, ...gameIcons, ...gameIcons].map((src, index) => (
               <img
                 key={index}
@@ -148,7 +148,7 @@ export default function GamesSection() {
 
         {/* Second Row - Scroll Left, starts from right */}
         <div className="scroll-row-right w-full overflow-hidden">
-          <div ref={scrollRowRightRef} className="scroll-content flex gap-3">
+          <div ref={scrollRowRightRef} className="scroll-content flex w-max gap-3">
             {[...gameIcons, ...gameIcons, ...gameIcons, ...gameIcons].map((src, index) => (
               <img
                 key={index}

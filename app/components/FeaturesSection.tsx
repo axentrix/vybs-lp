@@ -3,7 +3,7 @@ export default function FeaturesSection() {
     <section className="features-section flex w-full flex-col items-center gap-0 px-6 py-16 md:gap-[-44px] md:px-11 lg:py-20">
       
       {/* Feature 1 - Turn your playtime into PAYTIME */}
-      <div className="feature-row flex w-full max-w-[1200px] flex-col items-center justify-center gap-8 md:flex-row md:gap-12 lg:gap-16">
+      <div className="feature-row flex w-full max-w-[1200px] flex-col-reverse items-center justify-center gap-8 md:flex-row md:gap-12 lg:gap-16">
         <div className="feature-text flex flex-col items-start justify-center gap-6 md:items-end">
           <h2 className="text-heading w-full max-w-[556px] font-[family-name:var(--font-kanit)] text-right text-[28px] font-bold leading-[1.15] text-[#191C45] md:text-[36px] lg:text-[46px] lg:leading-[46px]">
             <span className="block text-[22px] md:text-[26px] lg:text-[32px]">

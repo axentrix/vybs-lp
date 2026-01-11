@@ -1,5 +1,7 @@
 'use client';
 
+import { getImagePath } from '../utils/basePath';
+
 export default function HowItWorksSection() {
   return (
     <section className="how-it-works-section flex w-full flex-col items-center gap-11 px-6 py-16 md:px-11 lg:py-20">
@@ -22,7 +24,7 @@ export default function HowItWorksSection() {
 
             {/* Background Image */}
             <img
-              src="/images/imageb1.png"
+              src={getImagePath('/images/Imageb1.png')}
               alt="Install VYBS"
               className="absolute inset-0 object-contain transform"
             />
@@ -45,7 +47,7 @@ export default function HowItWorksSection() {
 
             {/* Background Image */}
             <img
-              src="/images/imageb2.png"
+              src={getImagePath('/images/Imageb2.png')}
               alt="Play Games"
               className="absolute inset-0 object-contain"
             />
@@ -68,7 +70,7 @@ export default function HowItWorksSection() {
 
             {/* Background Image */}
             <img
-              src="/images/imageb3.png"
+              src={getImagePath('/images/Imageb3.png')}
               alt="Select Gift Card"
               className="absolute inset-0 h-full w-full object-cover"
             />

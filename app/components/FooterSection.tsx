@@ -1,6 +1,7 @@
 'use client';
 
 import Image from "next/image";
+import { getImagePath } from '../utils/basePath';
 
 export default function FooterSection() {
   return (
@@ -86,7 +87,7 @@ export default function FooterSection() {
         {/* Right Image - Similar to Hero */}
         <div className="relative -mx-6 -mb-16 h-[400px] w-screen flex-shrink-0 md:mx-0 md:mb-0 md:h-auto md:w-auto md:flex-1 lg:h-auto">
           <img
-            src="/images/rightimage1.png"
+            src={getImagePath('/images/rightimage1.png')}
             alt="Download VYBS"
             className="h-full w-full object-cover lg:object-contain"
           />

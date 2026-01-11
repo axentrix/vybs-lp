@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useEffect, useState } from 'react';
+import { getImagePath } from '../utils/basePath';
 
 interface GiftCard {
   src: string;
@@ -23,83 +24,83 @@ export default function GiftCardsSection() {
 
   const allCards: GiftCard[] = [
     {
-      src: '/images/cards/card-1.png',
+      src: getImagePath('/images/cards/card-1.png'),
       alt: 'Gift Card 1'
     },
     {
-      src: '/images/cards/card-2.png',
+      src: getImagePath('/images/cards/card-2.png'),
       alt: 'Gift Card 2'
     },
     {
-      src: '/images/cards/card-3.png',
+      src: getImagePath('/images/cards/card-3.png'),
       alt: 'Gift Card 3'
     },
     {
-      src: '/images/cards/card-4.png',
+      src: getImagePath('/images/cards/card-4.png'),
       alt: 'Gift Card 4'
     },
     {
-      src: '/images/cards/card-5.png',
+      src: getImagePath('/images/cards/card-5.png'),
       alt: 'Gift Card 5'
     },
     {
-      src: '/images/cards/card-6.png',
+      src: getImagePath('/images/cards/card-6.png'),
       alt: 'Gift Card 6'
     },
     {
-      src: '/images/cards/card.png',
+      src: getImagePath('/images/cards/card.png'),
       alt: 'Gift Card 7'
     },
     {
-      src: '/images/cards/amazon.png',
+      src: getImagePath('/images/cards/amazon.png'),
       alt: 'Amazon Gift Card'
     },
     {
-      src: '/images/cards/apple.png',
+      src: getImagePath('/images/cards/apple.png'),
       alt: 'Apple Gift Card'
     },
     {
-      src: '/images/cards/bbw.png',
+      src: getImagePath('/images/cards/bbw.png'),
       alt: 'BBW Gift Card'
     },
     {
-      src: '/images/cards/doordash.png',
+      src: getImagePath('/images/cards/doordash.png'),
       alt: 'DoorDash Gift Card'
     },
     {
-      src: '/images/cards/gamestop.png',
+      src: getImagePath('/images/cards/gamestop.png'),
       alt: 'GameStop Gift Card'
     },
     {
-      src: '/images/cards/google.png',
+      src: getImagePath('/images/cards/google.png'),
       alt: 'Google Gift Card'
     },
     {
-      src: '/images/cards/nike.png',
+      src: getImagePath('/images/cards/nike.png'),
       alt: 'Nike Gift Card'
     },
     {
-      src: '/images/cards/paypal.png',
+      src: getImagePath('/images/cards/paypal.png'),
       alt: 'PayPal Gift Card'
     },
     {
-      src: '/images/cards/pink.png',
+      src: getImagePath('/images/cards/pink.png'),
       alt: 'Pink Gift Card'
     },
     {
-      src: '/images/cards/playstation.png',
+      src: getImagePath('/images/cards/playstation.png'),
       alt: 'PlayStation Gift Card'
     },
     {
-      src: '/images/cards/roblox.png',
+      src: getImagePath('/images/cards/roblox.png'),
       alt: 'Roblox Gift Card'
     },
     {
-      src: '/images/cards/venmo.png',
+      src: getImagePath('/images/cards/venmo.png'),
       alt: 'Venmo Gift Card'
     },
     {
-      src: '/images/cards/visa.png',
+      src: getImagePath('/images/cards/visa.png'),
       alt: 'Visa Gift Card'
     },
   ];

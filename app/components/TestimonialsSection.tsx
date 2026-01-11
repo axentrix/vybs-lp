@@ -2,6 +2,7 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
+import { getImagePath } from '../utils/basePath';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -9,31 +10,31 @@ import 'swiper/css/navigation';
 export default function TestimonialsSection() {
   const testimonials = [
     {
-      image: '/images/testimonials/image-1.jpg',
+      image: getImagePath('/images/testimonials/image-1.jpg'),
       quote: "I've made good money playing this app.",
       name: "Pamela B.",
       rotation: "rotate-[3.235deg]"
     },
     {
-      image: '/images/testimonials/image-2.jpg',
+      image: getImagePath('/images/testimonials/image-2.jpg'),
       quote: "What I like most is that you don't wait forever to get your gift card.",
       name: "Daniel T.",
       rotation: "rotate-[3.531deg]"
     },
     {
-      image: '/images/testimonials/image-3.jpg',
+      image: getImagePath('/images/testimonials/image-3.jpg'),
       quote: "I was honestly skeptical at first, but the cashout was fast and legit — no tricks.",
       name: "Alex P.",
       rotation: "rotate-[-4.151deg]"
     },
     {
-      image: '/images/testimonials/image-4.jpg',
+      image: getImagePath('/images/testimonials/image-4.jpg'),
       quote: "Was expecting delays, but the payout came way faster than I thought.",
       name: "Nina T.",
       rotation: "rotate-[2.081deg]"
     },
     {
-      image: '/images/testimonials/image.jpg',
+      image: getImagePath('/images/testimonials/image.jpg'),
       quote: "No scam vibes here — earned, cashed out, done.",
       name: "Jordan R.",
       rotation: "rotate-[4.435deg]"
