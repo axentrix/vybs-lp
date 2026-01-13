@@ -42,10 +42,10 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section className="testimonials-section flex w-full flex-col items-center gap-10 px-6 py-16 md:px-11 lg:py-20">
+    <section className="testimonials-section flex w-full flex-col items-center gap-10 px-6 py-4 md:px-8 lg:py-8">
       {/* Section Title */}
       <h2 className="text-center font-[family-name:var(--font-kanit)] text-[36px] font-bold leading-tight tracking-tight text-[#191C45] md:text-[48px] lg:text-[58px] lg:leading-[64px]">
-        Happy gamers on VYBS
+        Recent Winners
       </h2>
 
       {/* Testimonials Carousel */}
@@ -68,6 +68,7 @@ export default function TestimonialsSection() {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index} className="flex items-stretch">
+              <div className="m-6">
               <div
                 className={`testimonial-card flex w-full flex-col gap-3 rounded-[17px] bg-white p-[17px] shadow-lg transition-transform hover:scale-105 ${testimonial.rotation}`}
               >
@@ -89,6 +90,7 @@ export default function TestimonialsSection() {
                 <p className="font-[family-name:var(--font-caveat)] text-[24px] font-normal leading-[49px] tracking-tight text-[#442248] md:text-[32px]">
                   {testimonial.name}
                 </p>
+              </div>
               </div>
             </SwiperSlide>
           ))}

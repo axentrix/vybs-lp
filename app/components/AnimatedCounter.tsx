@@ -65,7 +65,7 @@ export default function AnimatedCounter() {
 
   return (
     <div ref={containerRef} className="flex flex-col items-center gap-3">
-      <h1 className="font-[family-name:var(--font-kanit)] text-5xl font-bold leading-none text-[#1E2247] md:text-7xl lg:text-8xl">
+      <h1 className="font-[family-name:var(--font-kanit)] text-5xl font-bold leading-none text-[#1E2247] md:text-7xl lg:text-8xl h-20 md:h-28 lg:h-32 flex items-center">
         ${formattedCount}
       </h1>
 

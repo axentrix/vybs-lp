@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#F3F4FF' }}>
       <Header />
-      <section className="hero-section relative flex w-full overflow-hidden h-[668px]">
+      <section className="hero-section relative flex w-full overflow-hidden h-auto lg:h-[668px] pt-8 md:pt-0">
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-radial from-[#B3B9FF] via-[#6B75FF] to-[#4A55ED]"
              style={{ background: 'radial-gradient(30.77% 49.76% at 73.21% 46.65%, #B3B9FF 0%, #4A55ED 100%)' }} />
@@ -26,70 +26,58 @@ export default function Home() {
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-center px-6 py-0 md:px-11 h-auto lg:h-[668px] w-full">
 
           {/* Left Content - Max width 1200px */}
-          <div className="left-content max-w-[1200px] flex flex-col items-start gap-6 w-full lg:w-auto">
-            
-            {/* Logo */}
-            <div className="logo-container flex h-[61px] flex-col items-end justify-center py-[2.3px]">
+          <div className="left-content max-w-[1200px] flex flex-col items-start gap-6 w-full lg:w-auto sm:mt-8 md:mt-8">
+
+            {/* Logo - Top Left Corner (absolute on desktop >1200px, relative on mobile/tablet ≤1200px) */}
+            <div className="logo-container relative xl:absolute xl:top-6 xl:left-6 xl:z-20 ">
               <Image
                 src="https://api.builder.io/api/v1/image/assets/TEMP/0a06b2ab5e3ae5c4412dba9e104b75837a78fdb9?width=298"
                 alt="VYBS logo"
-                width={149}
-                height={56}
+                width={123}
+                height={47}
                 priority
-                className="h-auto w-[120px] md:w-[149px]"
+                className="h-[47px] w-[123px]"
               />
             </div>
 
             {/* Heading */}
             <h1 className="heading max-w-[598px] font-[family-name:var(--font-kanit)] text-[36px] font-bold uppercase leading-[1.185] tracking-[-0.25px] text-white md:text-[44px] lg:text-[54px] lg:leading-[64px]">
-              Play games you love.
-              <br />
-              Earn rewards fast.
+           Make Money Playing Games You would play anyway
+            
             </h1>
 
             {/* CTA Container */}
-            <div className="cta-container flex flex-row items-center gap-2 rounded-xl bg-black/[0.46] p-1 backdrop-blur-[2.3px] md:gap-2 md:px-6 md:py-3">
-              
-              {/* Signup Bonus Button */}
-              <div className="signup-bonus-btn flex items-center gap-[2px] rounded-full bg-black/[0.46] px-1 py-1 backdrop-blur-[2.3px] md:px-2 md:py-2">
-                <span className="text-center font-[family-name:var(--font-kanit)] text-sm  tracking-[0.46px] text-white md:text-base">
-                  Get your signup bonus
+            <div className="cta-container relative rounded-lg flex flex-col items-start gap-4 w-full lg:w-auto bg-[rgba(0,0,0,0.2)] lg:bg-transparent ">
+<div className="relative flex flex-col items-start gap-4 p-6 md:p-8 lg:p-8 ">
+              {/* Claim Bonus Button */}
+              <button className="claim-bonus-btn flex h-14 w-full max-w-[300px] items-center justify-center gap-2 rounded-lg bg-[#212671] px-6 pb-1 shadow-[inset_0_-6px_0_0_#323AAA] transition-transform hover:scale-105">
+                <span className="font-[family-name:var(--font-kanit)] text-lg font-bold leading-5 tracking-[0.1px] text-white">
+                  Claim your 5$  Bonus
                 </span>
-                
-                {/* Dollar Badge */}
-                <div className="dollar-badge flex items-center gap-[-4.6px]">
-                  <Image
-                    src="https://api.builder.io/api/v1/image/assets/TEMP/298d0991407b0c862d092154ab9de9562db7e7c5?width=46"
-                    alt=""
-                    width={23}
-                    height={23}
-                    className="h-auto w-5 self-stretch overflow-hidden md:w-6"
-                  />
-                  <div className="flex items-center">
-                    <span 
-                      className="font-[family-name:var(--font-kanit)] text-base font-extrabold leading-normal tracking-[-0.5px] text-[#EFF8CE] md:text-[17px]" 
-                      style={{ WebkitTextStroke: '1px rgba(0, 0, 0, 1)' }}>
-                      $
-                    </span>
-                    <span 
-                      className="font-[family-name:var(--font-kanit)] text-base font-extrabold leading-normal tracking-[-0.5px] text-white md:text-[17px]" 
-                      style={{ WebkitTextStroke: '1px rgba(0, 0, 0, 1)' }}>
-                      5
-                    </span>
-                  </div>
-                </div>
-              </div>
+              </button>
 
-              {/* Google Play Button */}
-              <a href="#" className="google-play-btn block">
+              {/* App Store Button */}
+              <a href="#" className="app-store-btn block">
                 <Image
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/dd38b293003262e4cbe2755a924afb4d8099fc44?width=400"
-                  alt="Get it on Google Play"
-                  width={200}
-                  height={64}
-                  className="h-auto w-[160px] rounded-xl md:w-[200px]"
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/438b846973bb42948f0191d1296856ce486088f1?width=291"
+                  alt="Download on the App Store"
+                  width={145}
+                  height={47}
+                  className="h-auto w-[145px] rounded-lg"
                 />
               </a>
+      
+              {/* Bonus Badge */}
+              <div className="bonus-badge absolute -right-8 -top-3 md:-right-8 md:-top-6">
+                <Image
+                  src="/images/bonusstar.svg"
+                  alt="Bonus Star Badge"
+                  width={77}
+                  height={77}
+                  className="h-[77px] w-[77px] drop-shadow-[0.5px_1px_0_rgba(255,255,255,0.77)]"
+                />
+              </div>
+              </div>
             </div>
           </div>
 
@@ -166,6 +154,13 @@ export default function Home() {
 
             {/* Large Amount - Animated Counter */}
             <AnimatedCounter />
+
+            {/* Start Earning CTA Button */}
+            <button className="start-earning-btn h-14 w-[300px] flex items-center justify-center gap-2 rounded-lg bg-[#5E69FF] px-6 pb-1 shadow-[inset_0_-6px_0_0_#4854EB] transition-transform hover:scale-105">
+              <span className="font-[family-name:var(--font-kanit)] text-lg font-bold leading-5 tracking-[0.1px] text-white">
+                Start Earning
+              </span>
+            </button>
           </div>
         </div>
       </section>

@@ -28,40 +28,45 @@ export default function GamesSection() {
     let animationId: number | null = null;
 
     const animate = () => {
-      if (!isInViewportRef.current) {
-        animationId = requestAnimationFrame(animate);
-        return;
-      }
-
-      const speed = speedRef.current;
+      const speed = isInViewportRef.current ? speedRef.current : 1.5;
       const direction = scrollDirectionRef.current;
 
-      // Adjust direction based on scroll
-      if (direction === 'up') {
-        // Scroll up: reverse directions (left goes left, right goes right)
-        leftPosition -= speed;
-        rightPosition += speed;
+      // Left row: only animate when in viewport
+      if (isInViewportRef.current) {
+        // Adjust direction based on scroll
+        if (direction === 'up') {
+          // Scroll up: reverse directions (left goes left, right goes right)
+          leftPosition -= speed;
 
-        if (leftPosition <= -leftSingleSetWidth * 2) {
-          leftPosition = -leftSingleSetWidth;
+          if (leftPosition <= -leftSingleSetWidth * 2) {
+            leftPosition = -leftSingleSetWidth;
+          }
+        } else {
+          // Scroll down (normal): left goes right
+          leftPosition += speed;
+
+          if (leftPosition >= leftSingleSetWidth) {
+            leftPosition = -leftSingleSetWidth;
+          }
         }
+
+        leftContainer.style.transform = `translateX(${leftPosition}px)`;
+      }
+
+      // Right row: always animate continuously, but change direction based on scroll
+      if (direction === 'up') {
+        // Scroll up: right row goes right
+        rightPosition += speed;
         if (rightPosition >= rightSingleSetWidth) {
           rightPosition = 0;
         }
       } else {
-        // Scroll down (normal): left goes right, right goes left
-        leftPosition += speed;
+        // Scroll down (normal): right row goes left
         rightPosition -= speed;
-
-        if (leftPosition >= leftSingleSetWidth) {
-          leftPosition = -leftSingleSetWidth;
-        }
         if (rightPosition <= -rightSingleSetWidth) {
           rightPosition = 0;
         }
       }
-
-      leftContainer.style.transform = `translateX(${leftPosition}px)`;
       rightContainer.style.transform = `translateX(${rightPosition}px)`;
 
       animationId = requestAnimationFrame(animate);
@@ -75,14 +80,13 @@ export default function GamesSection() {
       speedRef.current = 1.5; // Normal speed when scrolling
     };
 
-    // Handle viewport entry/exit
+    // Handle viewport entry/exit for left row only
     const observer = new IntersectionObserver(
       ([entry]) => {
         isInViewportRef.current = entry.isIntersecting;
         if (entry.isIntersecting) {
-          // On enter/enterback: restart with fast speed
+          // On enter/enterback: restart left row with fast speed
           leftPosition = -leftSingleSetWidth;
-          rightPosition = 0;
           speedRef.current = 3; // Fast speed on enter
           scrollDirectionRef.current = 'down'; // Reset to normal direction
         }
@@ -122,7 +126,7 @@ export default function GamesSection() {
   return (
     <section
       ref={sectionRef}
-      className="games-section flex w-full flex-col items-center gap-11 px-6 py-16 md:px-11"
+      className="games-section flex w-full flex-col items-center gap-11 px-6 py-4 md:px-11"
     >
       {/* Section Title */}
       <h2 className="max-w-[1440px] text-center font-[family-name:var(--font-kanit)] text-[32px] font-bold uppercase leading-tight tracking-[-0.25px] text-[#191C45] md:text-[42px] lg:text-[54px] lg:leading-[64px]">
@@ -159,6 +163,15 @@ export default function GamesSection() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* CTA Button */}
+      <div className="cta-button-container mt-8 flex w-full justify-center md:mt-12">
+        <button className="play-earn-btn flex h-14 w-[300px] items-center justify-center gap-2 rounded-lg bg-[#5E69FF] px-6 pb-1 shadow-[inset_0_-6px_0_0_#4854EB] transition-transform hover:scale-105">
+          <span className="font-[family-name:var(--font-kanit)] text-lg font-bold leading-5 tracking-[0.1px] text-white">
+            Play and Earn
+          </span>
+        </button>
       </div>
     </section>
   );

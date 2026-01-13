@@ -1,15 +1,11 @@
 // Get the base path for images
-// Check hostname at runtime to determine if we need prefix
+// Use NODE_ENV to determine dev vs production
 export function getBasePath(): string {
-  // Check if we're in the browser
-  if (typeof window !== 'undefined') {
-    const hostname = window.location.hostname;
-    // Localhost: no prefix
-    if (hostname === 'localhost' || hostname === '127.0.0.1') {
-      return '';
-    }
+  // Development mode (npm run dev): no prefix
+  if (process.env.NODE_ENV === 'development') {
+    return '';
   }
-  // GitHub Pages or during SSR build: use prefix
+  // Production mode (GitHub Pages): use prefix
   return '/vybs-lp';
 }
 

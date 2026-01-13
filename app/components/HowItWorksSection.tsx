@@ -4,7 +4,7 @@ import { getImagePath } from '../utils/basePath';
 
 export default function HowItWorksSection() {
   return (
-    <section className="how-it-works-section flex w-full flex-col items-center gap-11 px-6 py-16 md:px-11 lg:py-20">
+    <section className="how-it-works-section flex w-full flex-col items-center gap-8 px-6 py-6 md:px-11 lg:py-8">
       {/* Section Title */}
       <h2 className="text-center font-[family-name:var(--font-kanit)] text-[36px] font-bold leading-tight text-[#191C45] md:text-[48px] lg:text-[58px] lg:leading-[64px]">
         How it works

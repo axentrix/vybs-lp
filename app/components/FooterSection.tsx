@@ -28,42 +28,32 @@ export default function FooterSection() {
           </h2>
 
           {/* Download Button Container */}
-          <div className="flex w-full items-center gap-4 rounded-xl bg-black/[0.46] p-3 backdrop-blur-[2.3px] md:w-fit md:px-6 md:py-3">
-            
-            {/* Google Play Button */}
-            <a href="#" className="google-play-btn block">
-              <Image
-                src="https://api.builder.io/api/v1/image/assets/TEMP/dd38b293003262e4cbe2755a924afb4d8099fc44?width=400"
-                alt="Get it on Google Play"
-                width={200}
-                height={64}
-                className="h-auto w-[160px] rounded-xl md:w-[200px]"
-              />
-            </a>
+          
+ <div className="cta-container relative flex flex-col items-start gap-4">
 
-            {/* Dollar Badge */}
-            <div className="dollar-badge flex items-center gap-[-8px]">
-              <Image
-                src="https://api.builder.io/api/v1/image/assets/TEMP/2dbc9267b1927fbdbae3cd6bf90b8e4fc57e0342?width=83"
-                alt=""
-                width={42}
-                height={42}
-                className="h-auto w-[35px] self-stretch overflow-hidden md:w-[42px]"
-              />
-              <div className="flex items-center">
-                <span 
-                  className="font-[family-name:var(--font-kanit)] text-[24px] font-extrabold leading-normal tracking-[-0.9px] text-[#EFF8CE] md:text-[30px]" 
-                  style={{ WebkitTextStroke: '1px rgba(0, 0, 0, 1)' }}>
-                  $
+              {/* Claim Bonus Button */}
+              <button className="claim-bonus-btn flex h-14 w-[300px] items-center justify-center gap-2 rounded-lg bg-[#212671] px-6 pb-1 shadow-[inset_0_-6px_0_0_#323AAA] transition-transform hover:scale-105">
+                <span className="font-[family-name:var(--font-kanit)] text-lg font-bold leading-5 tracking-[0.1px] text-white">
+                  Claim your 5$  Bonus
                 </span>
-                <span 
-                  className="font-[family-name:var(--font-kanit)] text-[24px] font-extrabold leading-normal tracking-[-0.9px] text-white md:text-[30px]" 
-                  style={{ WebkitTextStroke: '1x rgba(0, 0, 0, 1)' }}>
-                  5
-                </span>
-              </div>
+              </button>
+
+              {/* App Store Button */}
+              <a href="#" className="app-store-btn block">
+                <Image
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/438b846973bb42948f0191d1296856ce486088f1?width=291"
+                  alt="Download on the App Store"
+                  width={145}
+                  height={47}
+                  className="h-auto w-[145px] rounded-lg"
+                />
+              </a>
+
+         
+          
             </div>
-          </div>
+
+
 
           {/* Footer Links */}
           <div className="pt-8 lg:mt-auto lg:pt-6">
