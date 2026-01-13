@@ -6,6 +6,7 @@ import FeaturesSection from "./components/FeaturesSection";
 import GiftCardsSection from "./components/GiftCardsSection";
 import HowItWorksSection from "./components/HowItWorksSection";
 import TestimonialsSection from "./components/TestimonialsSection";
+import { getImagePath } from './utils/basePath';
 import FooterSection from "./components/FooterSection";
 import HeroImages from "./components/HeroImages";
 import HeroRightImage from "./components/HeroRightImage";
@@ -70,11 +71,12 @@ export default function Home() {
               {/* Bonus Badge */}
               <div className="bonus-badge absolute -right-8 -top-3 md:-right-8 md:-top-6">
                 <Image
-                  src="/images/bonusstar.svg"
+                   src={getImagePath('/images/bonusstar.svg')}
+
                   alt="Bonus Star Badge"
                   width={77}
                   height={77}
-                  className="h-[77px] w-[77px] drop-shadow-[0.5px_1px_0_rgba(255,255,255,0.77)]"
+                  className="h-[77px] w-[77px] drop-shadow-[0.5px_1px_0_rgba(255,255,255,0.77)] animate-pulsate"
                 />
               </div>
               </div>

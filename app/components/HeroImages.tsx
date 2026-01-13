@@ -6,6 +6,7 @@ export default function HeroImages() {
   // Call at render time so it evaluates in the browser
   const pathSvgSrc = getImagePath('/images/path.svg');
   const heroGlowSrc = getImagePath('/images/heroglow.png');
+  
 
   return (
     <>
