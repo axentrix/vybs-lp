@@ -32,9 +32,41 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Scroll containers - JavaScript handles animation */
+/* Infinite scroll animations */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.scroll-row-left .scroll-content {
+  animation: scroll-left 40s linear infinite;
+}
+
+.scroll-row-right .scroll-content {
+  animation: scroll-right 40s linear infinite;
+}
+
 .scroll-content {
   will-change: transform;
+}
+
+/* Pause animation on hover */
+.scroll-row-left:hover .scroll-content,
+.scroll-row-right:hover .scroll-content {
+  animation-play-state: paused;
 }
 
 /* Swiper pagination dots styling */

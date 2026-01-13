@@ -1,117 +1,4 @@
-'use client';
-
-import { useRef, useEffect, useState } from 'react';
-
 export default function GamesSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const scrollRowLeftRef = useRef<HTMLDivElement>(null);
-  const scrollRowRightRef = useRef<HTMLDivElement>(null);
-  const lastScrollYRef = useRef(0);
-  const scrollDirectionRef = useRef<'up' | 'down'>('down');
-  const speedRef = useRef(1.5);
-  const isInViewportRef = useRef(false);
-
-
-  useEffect(() => {
-    if (!scrollRowLeftRef.current || !scrollRowRightRef.current) return;
-
-    const leftContainer = scrollRowLeftRef.current;
-    const rightContainer = scrollRowRightRef.current;
-    const itemWidth = 152; // 140px + 12px gap
-
-    // Calculate single set width based on cloned content
-    const leftSingleSetWidth = (leftContainer.scrollWidth / 4);
-    const rightSingleSetWidth = (rightContainer.scrollWidth / 4);
-
-    let leftPosition = -leftSingleSetWidth;
-    let rightPosition = 0;
-    let animationId: number | null = null;
-
-    const animate = () => {
-      const speed = isInViewportRef.current ? speedRef.current : 1.5;
-      const direction = scrollDirectionRef.current;
-
-      // Left row: only animate when in viewport
-      if (isInViewportRef.current) {
-        // Adjust direction based on scroll
-        if (direction === 'up') {
-          // Scroll up: reverse directions (left goes left, right goes right)
-          leftPosition -= speed;
-
-          if (leftPosition <= -leftSingleSetWidth * 2) {
-            leftPosition = -leftSingleSetWidth;
-          }
-        } else {
-          // Scroll down (normal): left goes right
-          leftPosition += speed;
-
-          if (leftPosition >= leftSingleSetWidth) {
-            leftPosition = -leftSingleSetWidth;
-          }
-        }
-
-        leftContainer.style.transform = `translateX(${leftPosition}px)`;
-      }
-
-      // Right row: always animate continuously, but change direction based on scroll
-      if (direction === 'up') {
-        // Scroll up: right row goes right
-        rightPosition += speed;
-        if (rightPosition >= rightSingleSetWidth) {
-          rightPosition = 0;
-        }
-      } else {
-        // Scroll down (normal): right row goes left
-        rightPosition -= speed;
-        if (rightPosition <= -rightSingleSetWidth) {
-          rightPosition = 0;
-        }
-      }
-      rightContainer.style.transform = `translateX(${rightPosition}px)`;
-
-      animationId = requestAnimationFrame(animate);
-    };
-
-    // Handle scroll direction detection
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      scrollDirectionRef.current = currentScrollY < lastScrollYRef.current ? 'up' : 'down';
-      lastScrollYRef.current = currentScrollY;
-      speedRef.current = 1.5; // Normal speed when scrolling
-    };
-
-    // Handle viewport entry/exit for left row only
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        isInViewportRef.current = entry.isIntersecting;
-        if (entry.isIntersecting) {
-          // On enter/enterback: restart left row with fast speed
-          leftPosition = -leftSingleSetWidth;
-          speedRef.current = 3; // Fast speed on enter
-          scrollDirectionRef.current = 'down'; // Reset to normal direction
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    window.addEventListener('scroll', handleScroll);
-    animate();
-
-    return () => {
-      if (animationId) {
-        cancelAnimationFrame(animationId);
-      }
-      window.removeEventListener('scroll', handleScroll);
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
   const gameIcons = [
     'https://api.builder.io/api/v1/image/assets/TEMP/9443229978948534816febfe1ea56d27218096bb?width=280',
     'https://api.builder.io/api/v1/image/assets/TEMP/1dc401952d5a1b9946350892d3eb638cc81a494d?width=280',
@@ -124,10 +11,7 @@ export default function GamesSection() {
   ];
 
   return (
-    <section
-      ref={sectionRef}
-      className="games-section flex w-full flex-col items-center gap-11 px-6 py-4 md:px-11"
-    >
+    <section className="games-section flex w-full flex-col items-center gap-11 px-6 py-4 md:px-11">
       {/* Section Title */}
       <h2 className="max-w-[1440px] text-center font-[family-name:var(--font-kanit)] text-[32px] font-bold uppercase leading-tight tracking-[-0.25px] text-[#191C45] md:text-[42px] lg:text-[54px] lg:leading-[64px]">
         100+ of your favorite mobile games
@@ -135,11 +19,11 @@ export default function GamesSection() {
 
       {/* Games Grid Container */}
       <div className="flex w-full max-w-[1200px] flex-col gap-[34px]">
-
-        {/* First Row - Left aligned, Scroll Right */}
+        {/* First Row - Scroll Left */}
         <div className="scroll-row-left w-full overflow-hidden">
-          <div ref={scrollRowLeftRef} className="scroll-content flex w-max gap-3">
-            {[...gameIcons, ...gameIcons, ...gameIcons, ...gameIcons].map((src, index) => (
+          <div className="scroll-content flex w-max gap-3">
+            {/* Duplicate the icons twice for seamless loop */}
+            {[...gameIcons, ...gameIcons].map((src, index) => (
               <img
                 key={index}
                 src={src}
@@ -150,10 +34,11 @@ export default function GamesSection() {
           </div>
         </div>
 
-        {/* Second Row - Scroll Left, starts from right */}
+        {/* Second Row - Scroll Right */}
         <div className="scroll-row-right w-full overflow-hidden">
-          <div ref={scrollRowRightRef} className="scroll-content flex w-max gap-3">
-            {[...gameIcons, ...gameIcons, ...gameIcons, ...gameIcons].map((src, index) => (
+          <div className="scroll-content flex w-max gap-3">
+            {/* Duplicate the icons twice for seamless loop */}
+            {[...gameIcons, ...gameIcons].map((src, index) => (
               <img
                 key={index}
                 src={src}
