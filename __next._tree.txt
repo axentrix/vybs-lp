@@ -14,4 +14,4 @@
 :HL["https://api.builder.io/api/v1/image/assets/TEMP/5681678c57ee882adf2e5052721a01c97862bdeb?width=280","image"]
 :HL["https://api.builder.io/api/v1/image/assets/TEMP/6146e3f60ec1ba4ed43fb40268737d2d6d81fe9b?width=280","image"]
 :HL["https://api.builder.io/api/v1/image/assets/TEMP/8143093ee609788f038a9002f93a8e5ec7ee787d?width=280","image"]
-0:{"buildId":"hNuY0yxF8TxDpsmdHcXlI","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"hKFEA7y2ur5ReNLhvDQN2","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
