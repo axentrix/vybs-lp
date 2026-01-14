@@ -25,7 +25,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed left-0 right-0 top-0 z-50 flex justify-center px-6 transition-transform duration-300 ${
+      className={`fixed left-0 right-0 top-0 z-50 flex justify-center px-4 transition-transform duration-300 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
@@ -71,7 +71,7 @@ export default function Header() {
         </div>
 
         {/* Start Earning Button */}
-        <button className="flex h-14 items-center justify-center gap-2 rounded-lg bg-[#5E69FF] px-6 pb-1 shadow-[inset_0_-6px_0_0_#4854EB] transition-transform hover:scale-105">
+        <button className="flex h-14 items-center justify-center gap-2 rounded-lg bg-[#5E69FF] px-4 pb-1 shadow-[inset_0_-6px_0_0_#4854EB] transition-transform hover:scale-105">
           {/* Download Icon */}
           <svg
             width="24"
@@ -94,7 +94,7 @@ export default function Header() {
           </svg>
           
           {/* Button Text */}
-          <span className="font-[family-name:var(--font-kanit)] text-lg font-bold leading-5 tracking-[0.1px] text-white">
+          <span className="font-[family-name:var(--font-kanit)] text-md font-bold leading-5 tracking-[0.1px] text-white">
             Start Earning
           </span>
         </button>

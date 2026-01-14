@@ -75,7 +75,7 @@ export default function FooterSection() {
         </div>
 
         {/* Right Image - Similar to Hero */}
-        <div className="relative -mx-6 -mb-16 h-[400px] w-screen flex-shrink-0 md:mx-0 md:mb-0 md:h-auto md:w-auto md:flex-1 lg:h-auto">
+        <div className="relative -mx-6 -mb-4 h-[400px] w-screen flex-shrink-0 md:mx-0 md:mb-0 md:h-auto md:w-auto md:flex-1 lg:h-auto">
           <img
             src={getImagePath('/images/rightimage1.png')}
             alt="Download VYBS"

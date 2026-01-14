@@ -134,3 +134,9 @@ body {
 .animate-pulsate {
   animation: badgePulsate 2s ease-in-out infinite;
 }
+section{
+  position:relative;
+}
+.how-it-works-section{
+  background:#E6E8FF !important;
+}

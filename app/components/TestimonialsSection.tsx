@@ -42,7 +42,7 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section className="testimonials-section flex w-full flex-col items-center gap-10 px-6 py-4 md:px-8 lg:py-8">
+    <section className="testimonials-section flex w-full flex-col items-center gap-4 px-6 py-12 md:px-8 lg:py-8">
       {/* Section Title */}
       <h2 className="text-center font-[family-name:var(--font-kanit)] text-[36px] font-bold leading-tight tracking-tight text-[#191C45] md:text-[48px] lg:text-[58px] lg:leading-[64px]">
         Recent Winners

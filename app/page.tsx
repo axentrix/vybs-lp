@@ -48,7 +48,7 @@ export default function Home() {
             </h1>
 
             {/* CTA Container */}
-            <div className="cta-container relative rounded-lg flex flex-col items-start gap-4 w-full lg:w-auto bg-[rgba(0,0,0,0.2)] lg:bg-transparent ">
+            <div className="cta-container relative rounded-lg flex flex-col items-start gap-4 w-full lg:w-auto bg-[rgba(0,0,0,0.2)]">
 <div className="relative flex flex-col items-start gap-4 p-6 md:p-8 lg:p-8 ">
               {/* Claim Bonus Button */}
               <button className="claim-bonus-btn flex h-14 w-full max-w-[300px] items-center justify-center gap-2 rounded-lg bg-[#212671] px-6 pb-1 shadow-[inset_0_-6px_0_0_#323AAA] transition-transform hover:scale-105">
@@ -89,7 +89,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="stats-section flex w-full justify-center px-6 py-12 md:px-11">
+      <section className="stats-section flex w-full justify-center px-6 py-8 md:px-11">
         <div className="relative flex w-full max-w-[1200px] min-h-[480px] flex-col items-center justify-center gap-6 overflow-hidden rounded-3xl bg-gradient-to-br from-[#E8E9F5] to-[#D4D6E8] px-8 py-16">
 
           {/* Decorative Stars */}

@@ -4,13 +4,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
+import { getImagePath } from '../utils/basePath';
 const features = [
   {
     id: 1,
     subtitle: 'Turn your playtime into',
     title: 'PAYTIME',
-    image: 'https://api.builder.io/api/v1/image/assets/TEMP/66391d4cd30f2c359fcd4971107803402281d94c?width=699',
+    image:  getImagePath('/images/image1.png'),
     alt: 'Person earning rewards while gaming',
     textAlign: 'md:items-end md:text-right',
   },
@@ -18,7 +18,7 @@ const features = [
     id: 2,
     subtitle: 'Get Paid to',
     title: 'PLAY GAMES',
-    image: 'https://api.builder.io/api/v1/image/assets/TEMP/cf87cb10fa9b94c6afca77d22f7a1915fa2b4f5f?width=694',
+    image:  getImagePath('/images/image2.png'),
     alt: 'Woman with payment cards and rewards',
     textAlign: 'md:items-start md:text-left',
   },
@@ -26,7 +26,7 @@ const features = [
     id: 3,
     subtitle: 'Enjoy a',
     title: '5$ SIGNUP BONUS',
-    image: 'https://api.builder.io/api/v1/image/assets/TEMP/1810ae836b4b7aa3fc9491b564acf4dd2d531700?width=680',
+   image:  getImagePath('/images/image3.png'),
     alt: 'Person celebrating signup bonus',
     textAlign: 'md:items-end md:text-right',
   },
@@ -68,7 +68,7 @@ export default function FeaturesSection() {
                   <img
                     src={feature.image}
                     alt={feature.alt}
-                    className="h-auto w-[280px] md:w-[320px] lg:w-[350px]"
+                    className="h-auto w-[340px] md:w-[420px] lg:w-[450px]"
                   />
                 </div>
               </div>

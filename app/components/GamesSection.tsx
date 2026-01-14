@@ -11,7 +11,7 @@ export default function GamesSection() {
   ];
 
   return (
-    <section className="games-section flex w-full flex-col items-center gap-11 px-6 py-4 md:px-11">
+    <section className="games-section flex w-full flex-col items-center gap-11 px-6 py-8 md:px-11">
       {/* Section Title */}
       <h2 className="max-w-[1440px] text-center font-[family-name:var(--font-kanit)] text-[32px] font-bold uppercase leading-tight tracking-[-0.25px] text-[#191C45] md:text-[42px] lg:text-[54px] lg:leading-[64px]">
         100+ of your favorite mobile games
@@ -51,7 +51,7 @@ export default function GamesSection() {
       </div>
 
       {/* CTA Button */}
-      <div className="cta-button-container mt-8 flex w-full justify-center md:mt-12">
+      <div className="cta-button-container mt-4 flex w-full justify-center md:mt-8">
         <button className="play-earn-btn flex h-14 w-[300px] items-center justify-center gap-2 rounded-lg bg-[#5E69FF] px-6 pb-1 shadow-[inset_0_-6px_0_0_#4854EB] transition-transform hover:scale-105">
           <span className="font-[family-name:var(--font-kanit)] text-lg font-bold leading-5 tracking-[0.1px] text-white">
             Play and Earn
