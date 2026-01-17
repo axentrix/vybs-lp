@@ -2,13 +2,13 @@
   "name": "lp",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
+ "scripts": {
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "export": "next build",
-    "deploy": "next build && gh-pages -d out --dotfiles"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out -t"
   },
   "dependencies": {
     "next": "16.1.1",

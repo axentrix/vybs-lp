@@ -42,23 +42,23 @@ export default function Home() {
             </div>
 
             {/* Heading */}
-            <h1 className="heading max-w-[598px] font-[family-name:var(--font-kanit)] text-[36px] font-bold uppercase leading-[1.185] tracking-[-0.25px] text-white md:text-[44px] lg:text-[54px] lg:leading-[64px]">
+            <h1 className="heading max-w-[598px] font-[family-name:var(--font-kanit)] text-[36px] font-bold leading-[1.185] tracking-[-0.25px] text-white md:text-[44px] lg:text-[54px] lg:leading-[64px]">
            Make Money Playing Games You would play anyway
             
             </h1>
 
             {/* CTA Container */}
             <div className="cta-container relative rounded-lg flex flex-col items-start gap-4 w-full lg:w-auto bg-[rgba(0,0,0,0.2)]">
-<div className="relative flex flex-col items-start gap-4 p-6 md:p-8 lg:p-8 ">
+<div className="relative flex flex-col items-center p-4 md:p-4 lg:p-4 w-full">
               {/* Claim Bonus Button */}
-              <button className="claim-bonus-btn flex h-14 w-full max-w-[300px] items-center justify-center gap-2 rounded-lg bg-[#212671] px-6 pb-1 shadow-[inset_0_-6px_0_0_#323AAA] transition-transform hover:scale-105">
-                <span className="font-[family-name:var(--font-kanit)] text-lg font-bold leading-5 tracking-[0.1px] text-white">
+              <button className="claim-bonus-btn flex h-14 w-full max-w-[320px] items-center justify-center gap-2 rounded-lg bg-[#212671] px-2 pb-1 shadow-[inset_0_-6px_0_0_#323AAA] transition-transform hover:scale-105">
+                <span className="font-[family-name:var(--font-kanit)] text-lg md:text-[24px] font-bold leading-5 tracking-[0.1px] text-white">
                   Claim your 5$  Bonus
                 </span>
               </button>
 
               {/* App Store Button */}
-              <a href="#" className="app-store-btn block">
+              <a href="#" className="app-store-btn block hidden">
                 <Image
                   src="https://api.builder.io/api/v1/image/assets/TEMP/438b846973bb42948f0191d1296856ce486088f1?width=291"
                   alt="Download on the App Store"
@@ -69,7 +69,7 @@ export default function Home() {
               </a>
       
               {/* Bonus Badge */}
-              <div className="bonus-badge absolute -right-8 -top-3 md:-right-8 md:-top-6">
+              <div className="bonus-badge absolute -right-2 -top-3 md:-right-8 md:-top-6">
                 <Image
                    src={getImagePath('/images/bonusstar.svg')}
 
@@ -123,8 +123,9 @@ export default function Home() {
           <div className="relative z-10 flex flex-col items-center gap-6">
 
             {/* Downloads */}
-            <h2 className="font-[family-name:var(--font-kanit)] text-2xl font-bold uppercase tracking-wide text-[#2A2D5B] md:text-3xl">
+            <h2 className="font-[family-name:var(--font-kanit)] text-2xl font-bold uppercase tracking-wide text-[#2A2D5B] text-center md:text-3xl">
               1M+ DOWNLOADS
+              <br /><span>5M+ players earning worldwide</span>
             </h2>
 
             {/* Star Rating Badge */}
@@ -159,7 +160,7 @@ export default function Home() {
 
             {/* Start Earning CTA Button */}
             <button className="start-earning-btn h-14 w-[300px] flex items-center justify-center gap-2 rounded-lg bg-[#5E69FF] px-6 pb-1 shadow-[inset_0_-6px_0_0_#4854EB] transition-transform hover:scale-105">
-              <span className="font-[family-name:var(--font-kanit)] text-lg font-bold leading-5 tracking-[0.1px] text-white">
+              <span className="font-[family-name:var(--font-kanit)] text-lg md:text-[24px] font-bold leading-5 tracking-[0.1px] text-white">
                 Start Earning
               </span>
             </button>

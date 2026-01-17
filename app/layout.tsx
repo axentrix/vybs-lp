@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getImagePath } from './utils/basePath';
 import { Geist, Geist_Mono, Kanit, Caveat } from "next/font/google";
+import ExitIntentPopup from './components/ExitIntentPopup';
 import "./globals.css";
 
 const geistSans = Geist({
@@ -59,6 +60,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${kanit.variable} ${caveat.variable} antialiased`}
       >
+        <ExitIntentPopup />
         {children}
       </body>
     </html>

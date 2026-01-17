@@ -155,7 +155,7 @@ export default function GiftCardsSection() {
 
       {/* Section Title */}
       <h2 className="max-w-[1200px] text-center font-[family-name:var(--font-kanit)] text-[36px] font-bold uppercase leading-tight tracking-normal text-[#191C45] md:text-[32px] lg:text-[44px] lg:leading-[88px]">
-     Huge selection of Amazing Gift Cards
+    More than 50 Awesome Gift Cards
       </h2>
 
       {/* Gift Cards Grid */}
@@ -225,7 +225,7 @@ export default function GiftCardsSection() {
       {/* CTA Button */}
       <div className="cta-button-container mt-8 flex w-full justify-center md:mt-12">
         <button className="play-earn-btn start-earning-btn h-14 w-[300px] flex items-center justify-center gap-2 rounded-lg bg-[#5E69FF] px-6 pb-1 shadow-[inset_0_-6px_0_0_#4854EB] transition-transform hover:scale-105">
-          <span className="font-[family-name:var(--font-kanit)] text-lg font-bold leading-5 tracking-[0.1px] text-white">
+          <span className="font-[family-name:var(--font-kanit)] text-lg md:text-[24px] font-bold leading-5 tracking-[0.1px] text-white">
             Play and Earn
           </span>
         </button>

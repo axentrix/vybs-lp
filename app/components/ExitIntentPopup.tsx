@@ -1,0 +1,147 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { getImagePath } from '../utils/basePath';
+
+export default function ExitIntentPopup() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    const handleMouseLeave = (e: MouseEvent) => {
+      // Check if mouse is leaving from the top of the page
+      if (e.clientY <= 0) {
+        setShowPopup(true);
+      }
+    };
+
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      // For external link navigation or direct URL entry
+      e.preventDefault();
+      e.returnValue = '';
+      setShowPopup(true);
+      return '';
+    };
+
+    document.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      document.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
+
+  const handleClose = () => {
+    setShowPopup(false);
+  };
+
+  if (!showPopup) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
+      <div className="exit-popup-container relative flex w-full max-w-[640px] items-center overflow-hidden rounded-3xl bg-[#EBEFFF]">
+        {/* Close Button */}
+        <button
+          onClick={handleClose}
+          className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center text-gray-600 transition-all hover:text-gray-800"
+          aria-label="Close popup"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 4L4 12M4 4L12 12"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
+
+        {/* Left Image */}
+        <div className="hidden flex-shrink-0 sm:block">
+          <img
+            src={getImagePath('/images/after.png')}
+            alt="Earn money illustration"
+            className="h-86 w-auto object-cover"
+          />
+        </div>
+
+        {/* Right Content */}
+        <div className="flex flex-1 flex-col items-start justify-center gap-3 p-6 sm:pr-8">
+          {/* Heading */}
+          <h2 className="w-full font-[family-name:var(--font-kanit)] text-2xl font-semibold leading-7 tracking-[0.1px] text-black">
+            Earn money and cashout instantly
+          </h2>
+
+          {/* Bonus Badge with Arrow */}
+          <div className="flex flex-col items-end gap-0">
+            {/* Badge Container */}
+            <div className="flex items-center gap-0 overflow-hidden rounded-md bg-[#1B1619] px-1 py-1 shadow-lg backdrop-blur-sm">
+              {/* Gift Icon + Time */}
+              <div className="arrow-bonus flex flex-col items-center justify-center gap-1.5 rounded bg-[#D7FD61] px-2 py-1 transition-transform hover:scale-105">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="stroke-[#022B0C]"
+                  strokeWidth="1.451"
+                >
+                  <path
+                    d="M11.8432 6.57954V12.7643C11.8432 12.8161 11.833 12.8675 11.8131 12.9154C11.7933 12.9633 11.7642 13.0068 11.7275 13.0435C11.6909 13.0801 11.6474 13.1092 11.5995 13.129C11.5516 13.1489 11.5002 13.1591 11.4484 13.1591H1.71068C1.65884 13.1591 1.6075 13.1489 1.55961 13.129C1.51171 13.1092 1.46819 13.0801 1.43153 13.0435C1.39488 13.0068 1.3658 12.9633 1.34596 12.9154C1.32612 12.8675 1.31591 12.8161 1.31591 12.7643V6.57954M6.57954 13.1591V3.28977M6.57954 3.28977H3.61875C3.1825 3.28977 2.76411 3.11647 2.45564 2.80799C2.14716 2.49952 1.97386 2.08113 1.97386 1.64488C1.97386 1.20863 2.14716 0.790251 2.45564 0.481776C2.76411 0.1733 3.1825 0 3.61875 0C5.92158 0 6.57954 3.28977 6.57954 3.28977ZM6.57954 3.28977H9.54033C9.97658 3.28977 10.395 3.11647 10.7034 2.80799C11.0119 2.49952 11.1852 2.08113 11.1852 1.64488C11.1852 1.20863 11.0119 0.790251 10.7034 0.481776C10.395 0.1733 9.97658 0 9.54033 0C7.23749 0 6.57954 3.28977 6.57954 3.28977ZM12.7643 3.28977H0.394772C0.290072 3.28977 0.18966 3.33136 0.115626 3.4054C0.041592 3.47943 0 3.57984 0 3.68454V6.18477C0 6.28947 0.041592 6.38988 0.115626 6.46391C0.18966 6.53795 0.290072 6.57954 0.394772 6.57954H12.7643C12.869 6.57954 12.9694 6.53795 13.0435 6.46391C13.1175 6.38988 13.1591 6.28947 13.1591 6.18477V3.68454C13.1591 3.57984 13.1175 3.47943 13.0435 3.4054C12.9694 3.33136 12.869 3.28977 12.7643 3.28977Z"
+                    stroke="#022B0C"
+                    strokeWidth="1.45078"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <span className="font-[family-name:var(--font-kanit)] text-[9px] font-medium leading-2 tracking-[0.085px] text-[#022B0C] opacity-75">
+                  1 min
+                </span>
+              </div>
+
+              {/* Bonus Text */}
+              <div className="flex flex-col items-start px-2">
+                <span className="font-[family-name:var(--font-kanit)] text-xs font-semibold leading-[13.668px] tracking-[0.085px] text-[#D7FD61]">
+                  5$ bonus
+                </span>
+                <span className="font-[family-name:var(--font-kanit)] text-[9px] font-normal leading-[10.251px] tracking-[0.085px] text-[#F4F4F4]">
+                  Sign up to collect
+                </span>
+              </div>
+            </div>
+
+            {/* Arrow Pointer */}
+            <svg
+              width="36"
+              height="9"
+              viewBox="0 0 36 9"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="ml-3"
+            >
+              <path d="M17.8863 8.68579L23.7725 0H12L17.8863 8.68579Z" fill="#1B1619" />
+            </svg>
+          </div>
+
+          {/* CTA Button */}
+          <button
+            onClick={handleClose}
+            className="flex h-[54px] w-full items-center justify-center gap-2 rounded-lg bg-[#5E69FF] px-6 pb-1 shadow-[inset_0_-6px_0_0_#4854EB] transition-transform hover:scale-105"
+          >
+            <span className="font-[family-name:var(--font-kanit)] text-[18px] font-medium leading-4 tracking-[0.1px] text-white">
+              Get Started for Free
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}

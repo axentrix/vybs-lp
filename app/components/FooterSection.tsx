@@ -33,13 +33,13 @@ export default function FooterSection() {
 
               {/* Claim Bonus Button */}
               <button className="claim-bonus-btn flex h-14 w-[300px] items-center justify-center gap-2 rounded-lg bg-[#212671] px-6 pb-1 shadow-[inset_0_-6px_0_0_#323AAA] transition-transform hover:scale-105">
-                <span className="font-[family-name:var(--font-kanit)] text-lg font-bold leading-5 tracking-[0.1px] text-white">
-                  Claim your 5$  Bonus
+                <span className="font-[family-name:var(--font-kanit)] text-lg md:text-[18px] font-bold leading-5 tracking-[0.1px] text-white">
+                 Collect your $5 Bonus now
                 </span>
               </button>
 
               {/* App Store Button */}
-              <a href="#" className="app-store-btn block">
+              <a href="#" className="app-store-btn hidden block">
                 <Image
                   src="https://api.builder.io/api/v1/image/assets/TEMP/438b846973bb42948f0191d1296856ce486088f1?width=291"
                   alt="Download on the App Store"

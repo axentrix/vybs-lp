@@ -26,7 +26,7 @@ export default function HowItWorksSection() {
             <img
               src={getImagePath('/images/Imageb1.png')}
               alt="Install VYBS"
-              className="absolute inset-0 object-contain transform"
+              className="absolute inset-0 w-full h-full object-contain object-center z-0"
             />
           </div>
 
@@ -53,7 +53,7 @@ export default function HowItWorksSection() {
             <img
               src={getImagePath('/images/Imageb2.png')}
               alt="Play Games"
-              className="absolute inset-0 object-contain"
+              className="absolute inset-0 w-full h-full object-contain object-center z-0"
             />
           </div>
 

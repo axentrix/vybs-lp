@@ -52,11 +52,21 @@ body {
 }
 
 .scroll-row-left .scroll-content {
-  animation: scroll-left 40s linear infinite;
+  animation: scroll-left 12s linear infinite;
 }
 
 .scroll-row-right .scroll-content {
-  animation: scroll-right 40s linear infinite;
+  animation: scroll-right 12s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .scroll-row-left .scroll-content {
+    animation: scroll-left 20s linear infinite;
+  }
+
+  .scroll-row-right .scroll-content {
+    animation: scroll-right 20s linear infinite;
+  }
 }
 
 .scroll-content {
@@ -139,4 +149,27 @@ section{
 }
 .how-it-works-section{
   background:#E6E8FF !important;
+}
+
+@media (min-width: 990px) and (max-width: 1199px) {
+  .heading {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+
+/* Exit Intent Popup Animation */
+@keyframes popupSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.exit-popup-container {
+  animation: popupSlideIn 0.3s ease-out;
 }

@@ -16,15 +16,15 @@ const features = [
   },
   {
     id: 2,
-    subtitle: 'Get Paid to',
-    title: 'PLAY GAMES',
+    subtitle: 'Earn up to',
+    title: '$500 PER GAME',
     image:  getImagePath('/images/image2.png'),
     alt: 'Woman with payment cards and rewards',
     textAlign: 'md:items-start md:text-left',
   },
   {
     id: 3,
-    subtitle: 'Enjoy a',
+    subtitle: 'Collect a',
     title: '5$ SIGNUP BONUS',
    image:  getImagePath('/images/image3.png'),
     alt: 'Person celebrating signup bonus',

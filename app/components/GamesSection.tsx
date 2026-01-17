@@ -33,27 +33,12 @@ export default function GamesSection() {
             ))}
           </div>
         </div>
-
-        {/* Second Row - Scroll Right */}
-        <div className="scroll-row-right w-full overflow-hidden">
-          <div className="scroll-content flex w-max gap-3">
-            {/* Duplicate the icons twice for seamless loop */}
-            {[...gameIcons, ...gameIcons].map((src, index) => (
-              <img
-                key={index}
-                src={src}
-                alt=""
-                className="game-icon h-[140px] w-[140px] flex-shrink-0 rounded-[5.594px] object-cover"
-              />
-            ))}
-          </div>
-        </div>
       </div>
 
       {/* CTA Button */}
       <div className="cta-button-container mt-4 flex w-full justify-center md:mt-8">
         <button className="play-earn-btn flex h-14 w-[300px] items-center justify-center gap-2 rounded-lg bg-[#5E69FF] px-6 pb-1 shadow-[inset_0_-6px_0_0_#4854EB] transition-transform hover:scale-105">
-          <span className="font-[family-name:var(--font-kanit)] text-lg font-bold leading-5 tracking-[0.1px] text-white">
+          <span className="font-[family-name:var(--font-kanit)] text-lg md:text-[24px] font-bold leading-5 tracking-[0.1px] text-white">
             Play and Earn
           </span>
         </button>
