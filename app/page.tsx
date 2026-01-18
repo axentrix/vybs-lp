@@ -51,7 +51,7 @@ export default function Home() {
             <div className="cta-container relative rounded-lg flex flex-col items-start gap-4 w-full lg:w-auto bg-[rgba(0,0,0,0.2)]">
 <div className="relative flex flex-col items-center p-4 md:p-4 lg:p-4 w-full">
               {/* Claim Bonus Button */}
-              <button className="claim-bonus-btn flex h-14 w-full max-w-[320px] items-center justify-center gap-2 rounded-lg bg-[#212671] px-2 pb-1 shadow-[inset_0_-6px_0_0_#323AAA] transition-transform hover:scale-105">
+              <button className="claim-bonus-btn flex h-16 w-full max-w-[380px] min-w-[360px] items-center justify-center gap-2 rounded-lg bg-[#212671] px-2 pb-1 shadow-[inset_0_-6px_0_0_#323AAA] transition-transform hover:scale-105">
                 <span className="font-[family-name:var(--font-kanit)] text-lg md:text-[24px] font-bold leading-5 tracking-[0.1px] text-white">
                   Claim your 5$  Bonus
                 </span>
@@ -69,7 +69,7 @@ export default function Home() {
               </a>
       
               {/* Bonus Badge */}
-              <div className="bonus-badge absolute -right-2 -top-3 md:-right-8 md:-top-6">
+              <div className="bonus-badge absolute -right-8 -top-3 md:-right-8 md:-top-6">
                 <Image
                    src={getImagePath('/images/bonusstar.svg')}
 
@@ -89,7 +89,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="stats-section flex w-full justify-center px-6 py-8 md:px-11">
+      <section className="stats-section flex w-full justify-center px-6 my-8 py-8 md:px-11">
         <div className="relative flex w-full max-w-[1200px] min-h-[480px] flex-col items-center justify-center gap-6 overflow-hidden rounded-3xl bg-gradient-to-br from-[#E8E9F5] to-[#D4D6E8] px-8 py-16">
 
           {/* Decorative Stars */}

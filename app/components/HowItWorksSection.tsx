@@ -4,7 +4,7 @@ import { getImagePath } from '../utils/basePath';
 
 export default function HowItWorksSection() {
   return (
-    <section className="how-it-works-section flex w-full flex-col items-center gap-8 px-6 py-6 md:px-11 lg:py-8 bg-[#E6E8FF]">
+    <section className="how-it-works-section flex w-full flex-col items-center gap-8 px-6 py-6 md:px-11 lg:py-20 bg-[#E6E8FF]">
       {/* Section Title */}
       <h2 className="text-center font-[family-name:var(--font-kanit)] text-[36px] font-bold leading-tight text-[#191C45] md:text-[48px] lg:text-[58px] lg:leading-[64px]">
         How it works
@@ -32,7 +32,7 @@ export default function HowItWorksSection() {
 
           {/* Card Description */}
           <div>
-          <p className="text-center font-[family-name:var(--font-kanit)] text-[14px] font-medium leading-normal text-black md:text-[16px] lg:text-[18px]">
+          <p className="text-center font-[family-name:var(--font-kanit)] text-[14px] font-medium leading-normal text-black md:text-[18px] lg:text-[22px] mb-4">
           Install VYBS and get a
 
           </p>
@@ -59,7 +59,7 @@ export default function HowItWorksSection() {
 
           {/* Card Description */} <div>
           <h4 className="text-center font-[family-name:var(--font-kanit)] font-bold leading-tight text-[#191C45] p-0 m-0 text-[24px] md:text-[26px] lg:text-[32px] lg:leading-[24px]">Choose a game</h4>
-          <p className="text-center font-[family-name:var(--font-kanit)] text-[14px] font-medium leading-normal text-black md:text-[16px] lg:text-[18px]">
+          <p className="text-center font-[family-name:var(--font-kanit)] text-[14px] font-medium leading-normal text-black md:text-[18px] lg:text-[22px] mt-4">
            Choose from over 100 games with a variety of game milestones and missionsChoose from over 100 games with a variety of game milestones and missions
           </p>
         </div></div>
@@ -83,7 +83,7 @@ export default function HowItWorksSection() {
 
           {/* Card Description */}<div>
           <h4 className="text-center font-[family-name:var(--font-kanit)] font-bold leading-tight text-[#191C45] p-0 m-0 text-[24px] md:text-[26px] lg:text-[32px] lg:leading-[24px]">Cashout your earnings</h4>
-          <p className="text-center font-[family-name:var(--font-kanit)] text-[14px] font-medium leading-normal text-black md:text-[16px] lg:text-[18px]">
+          <p className="text-center font-[family-name:var(--font-kanit)] text-[14px] font-medium leading-normal text-black md:text-[18px] lg:text-[22px] mt-4">
            Once hitting the rewads, select your favorite way to cashout
           </p>
         </div></div>

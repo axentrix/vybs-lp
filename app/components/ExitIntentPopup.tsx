@@ -6,6 +6,19 @@ import { getImagePath } from '../utils/basePath';
 export default function ExitIntentPopup() {
   const [showPopup, setShowPopup] = useState(false);
 
+  // Preload the exit intent popup image
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = getImagePath('/images/after.png');
+    document.head.appendChild(link);
+
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
+
   useEffect(() => {
     const handleMouseLeave = (e: MouseEvent) => {
       // Check if mouse is leaving from the top of the page
@@ -84,7 +97,7 @@ export default function ExitIntentPopup() {
             {/* Badge Container */}
             <div className="flex items-center gap-0 overflow-hidden rounded-md bg-[#1B1619] px-1 py-1 shadow-lg backdrop-blur-sm">
               {/* Gift Icon + Time */}
-              <div className="arrow-bonus flex flex-col items-center justify-center gap-1.5 rounded bg-[#D7FD61] px-2 py-1 transition-transform hover:scale-105">
+              <div className="flex flex-col items-center justify-center gap-1.5 rounded bg-[#D7FD61] px-2 py-1">
                 <svg
                   width="14"
                   height="14"
